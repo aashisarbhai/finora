@@ -19,3 +19,18 @@ code {
 .footer-link:hover{
   color: var(--bs-primary) !important;
 }
+
+#support-hero{
+  background-color: rgb(56,126,209);
+  color: white;
+}
+
+#support-hero a{
+  color: white;
+}
+
+#support-wrapper{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 150px;
+}
