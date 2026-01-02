@@ -1,4 +1,4 @@
-const {Scehma} = require('mongoose');
+const {Schema} = require('mongoose');
 
 const OrdersSchema=new Schema({
     name: String,
