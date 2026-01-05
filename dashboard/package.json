@@ -1,4 +1,6 @@
-{
+{"engines":{
+    "node":"21.7.3"
+  },
   "name": "dashboard",
   "version": "0.1.0",
   "private": true,
