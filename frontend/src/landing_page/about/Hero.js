@@ -10,7 +10,7 @@ function Hero() {
 
             <div className='row p-5 mt-5 border-top text-muted ' style={{lineHeight:"1.8", fontSize:"1.2em"}}>
                 <div className='col-6 p-5'>
-                    <p>We kick-started operations on the 15th of August, 2010 with the goal of breaking all barriers that traders and investors face in India in terms of cost, support, and technology. We named the company Zerodha, a combination of Zero and "Rodha", the Sanskrit word for barrier.</p>
+                    <p>We kick-started Finora with a simple yet powerful vision: to simplify finance and remove the barriers that individuals face in managing, investing, and growing their wealth. Built with a user-first mindset, Finora focuses on accessibility, transparency, and smart financial decision-making through technology.</p>
 
                     <p>Today, our disruptive pricing models and in-house technology have made us the biggest stock broker in India.</p>
 

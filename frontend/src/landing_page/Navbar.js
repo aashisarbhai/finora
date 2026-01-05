@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-      <nav class="navbar navbar-expand-lg border-bottom" style={{backgroundColor:"#fff"}}>
-        <div class="container p-2">
+      <nav className="navbar navbar-expand-lg border-bottom" style={{backgroundColor:"#fff"}}>
+        <div className="container p-2">
           <Link class="navbar-brand" to="/"> 
-            <img src="media/logo.svg" style={{width:"25%"}} alt="logo"/>
+            <img src="media/finora_logo.png" style={{width:"20%",height:"20%"}} alt="logo"/>
           </Link>
           <button
             class="navbar-toggler"

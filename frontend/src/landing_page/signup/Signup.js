@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 const Signup = () => {
-  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
     username: "",
   });
+
   const { email, password, username } = inputValue;
 
   const handleOnChange = (e) => {
@@ -21,39 +21,40 @@ const Signup = () => {
   };
 
   const handleError = (err) =>
-    toast.error(err, {
-      position: "bottom-left",
-    });
+    toast.error(err, { position: "bottom-left" });
+
   const handleSuccess = (msg) =>
-    toast.success(msg, {
-      position: "bottom-right",
-    });
+    toast.success(msg, { position: "bottom-right" });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/signup",
+        "http://localhost:3001/signup",
         { ...inputValue },
         { withCredentials: true }
       );
-      const { success, message } = data;
+
+      console.log("SIGNUP RESPONSE:", data); // debug
+
+      const { success, message, user } = data; // ✅ destructure user from backend
+
       if (success) {
-        handleSuccess(message);
-        setTimeout(() => {
-          navigate("/");
-        }, 1000);
-      } else {
+  handleSuccess(message);
+
+  // redirect with username in query param
+  setTimeout(() => {
+    window.location.href = `http://localhost:3002?username=${data.user.username}`;
+  }, 1000);
+}else {
         handleError(message);
+        // reset form only on failure
+        setInputValue({ email: "", password: "", username: "" });
       }
     } catch (error) {
       console.log(error);
+      handleError("Something went wrong. Please try again.");
     }
-    setInputValue({
-      email: "",
-      password: "",
-      username: "",
-    });
   };
 
   return (
@@ -62,7 +63,7 @@ const Signup = () => {
         <h2 className="text-center mb-4">Signup Account</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="email" className="form-label">Email</label>
+            <label className="form-label">Email</label>
             <input
               type="email"
               name="email"
@@ -75,7 +76,7 @@ const Signup = () => {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="username" className="form-label">Username</label>
+            <label className="form-label">Username</label>
             <input
               type="text"
               name="username"
@@ -88,7 +89,7 @@ const Signup = () => {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="password" className="form-label">Password</label>
+            <label className="form-label">Password</label>
             <input
               type="password"
               name="password"
@@ -100,7 +101,9 @@ const Signup = () => {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary w-100">Submit</button>
+          <button type="submit" className="btn btn-primary w-100">
+            Submit
+          </button>
 
           <p className="text-center mt-3">
             Already have an account? <Link to="/login">Login</Link>

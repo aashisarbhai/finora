@@ -7,7 +7,7 @@ function Stats() {
                 <div className='col-6 p-5'>
                     <h1 className='fs-2 mb-5'>Trust with confidence</h1>
                     <h2 className='fs-4'>Customer-first always</h2>
-                    <p className='text-muted'>That's why 1.3+ crore customers trust Zerodha with 3.5+ lakh crores worth of equity investments.</p>
+                    <p className='text-muted'>That's why 1.3+ crore customers trust Finora with 3.5+ lakh crores worth of equity investments.</p>
                     <h2 className='fs-4'>No spam or gimmicks</h2>
                     <p className='text-muted'>No gimmicks, spams. "gamification", or annoying push notifications. High quality apps that you use at your pace, yhe way you like.</p>
                     <h2 className='fs-4'>The Finora universe</h2>
